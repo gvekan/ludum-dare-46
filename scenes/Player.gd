@@ -4,6 +4,15 @@ export var speed = 200
 
 var last_horizontal_input = ""
 var last_vertical_input = ""
+var current_tool = TOOLS.hand
+
+enum TOOLS{
+	hand,
+	knife,
+	apple,
+	phone,
+	tweezers
+}
 
 
 # Declare member variables here. Examples:
@@ -56,3 +65,7 @@ func _process(delta):
 	
 	var velocity = Vector2(x, y).normalized() * speed
 	move_and_slide(velocity)
+
+func switch_tool(tools):
+	current_tool = tools
+	 

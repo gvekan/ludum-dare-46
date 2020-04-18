@@ -1,0 +1,18 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scenes/Patient.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/Surgery.gd" type="Script" id=3]
+[ext_resource path="res://scenes/tools/Tool.tscn" type="PackedScene" id=4]
+
+[node name="Surgery" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="Patient" parent="." instance=ExtResource( 1 )]
+position = Vector2( 187.392, 303.309 )
+
+[node name="Player" parent="." instance=ExtResource( 2 )]
+position = Vector2( 263.925, 332.009 )
+
+[node name="Tool" parent="." instance=ExtResource( 4 )]
+position = Vector2( 351.138, 114.398 )

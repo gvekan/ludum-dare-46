@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="2D Surgery Simulator"
-run/main_scene="res://scenes/Player.tscn"
+run/main_scene="res://scenes/Surgery.tscn"
 config/icon="res://icon.png"
 
 [rendering]
