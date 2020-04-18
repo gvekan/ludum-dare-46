@@ -9,10 +9,15 @@
 script = ExtResource( 3 )
 
 [node name="Patient" parent="." instance=ExtResource( 1 )]
-position = Vector2( 187.392, 303.309 )
+position = Vector2( 328.494, 314.226 )
+
+[node name="Knife" parent="." instance=ExtResource( 4 )]
+position = Vector2( 808.944, 241.476 )
+
+[node name="Apple" parent="." instance=ExtResource( 4 )]
+position = Vector2( 725.442, 240.58 )
+type = "apple"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 263.925, 332.009 )
-
-[node name="Tool" parent="." instance=ExtResource( 4 )]
-position = Vector2( 351.138, 114.398 )
+position = Vector2( 461.941, 509.668 )
+z_index = 1

@@ -1,6 +1,8 @@
 extends Node2D
 
 
+var tool_scene = load("res://scenes/tools/Tool.tscn")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -8,11 +10,10 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Patient/Mouth.connect("organ_clicked",self,"_on_organ_clicked")
-	$Patient/Hairline.connect("organ_clicked",self,"_on_organ_clicked")
-	$Patient/Blatter.connect("organ_clicked",self,"_on_organ_clicked")
+	$Patient/Organ4.connect("organ_clicked",self,"_on_organ_clicked")
 	
-	$Tool.connect("tool_clicked", self, "_on_tool_clicked")
+	$Knife.connect("tool_clicked", self, "_on_tool_clicked")
+	$Apple.connect("tool_clicked", self, "_on_tool_clicked")
 	
 
 
@@ -21,8 +22,16 @@ func _ready():
 #	pass
 
 func _on_organ_clicked(organ, player):
-	print("hej")
+	if player.current_tool == Tool.KNIFE:
+		organ.open()
 	
 
-func _on_tool_clicked(tools):
-	print("tool clicked")
+func _on_tool_clicked(clicked_tool, player):
+	if player.current_tool:
+		var dropped_tool = tool_scene.instance()
+		dropped_tool.type = player.current_tool
+		dropped_tool.position = clicked_tool.position
+		add_child(dropped_tool)
+		dropped_tool.connect("tool_clicked", self, "_on_tool_clicked")
+	player.current_tool = clicked_tool.type
+	remove_child(clicked_tool)

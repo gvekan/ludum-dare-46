@@ -1,24 +1,41 @@
 extends Area2D
+class_name Tool
 
+const KNIFE = "knife"
+const APPLE = "apple"
+
+
+var type_assets = {
+	KNIFE: preload("res://assets/knife.png"),
+	APPLE: preload("res://assets/apple.png")
+	}
+	
+export var type = KNIFE
+
+func set_type(new_type):
+	var texture = type_assets[new_type]
+	if texture:
+		type = new_type
+		$Sprite.texture = texture
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-signal tool_clicked(tools)
-var on_tool = false
+signal tool_clicked(tools, player)
+var player_over_tool = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	set_type(type)
 
 func _input(event):
-	if event.is_action_pressed("ui_accept") and on_tool:
-		emit_signal("tool_clicked",self)
+	if event.is_action_pressed("ui_accept") and player_over_tool:
+		emit_signal("tool_clicked",self, player_over_tool)
 
 
 func _on_Tool_body_entered(body):
-	on_tool = true
+	player_over_tool = body
 
 
 func _on_Tool_body_exited(body):
-	on_tool = false
+	player_over_tool = null

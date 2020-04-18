@@ -1,9 +1,10 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/tools/Tool.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://assets/knife.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 26.4029, 25.6515 )
 
 [node name="Tool" type="Area2D"]
 script = ExtResource( 1 )
@@ -12,8 +13,7 @@ script = ExtResource( 1 )
 shape = SubResource( 1 )
 
 [node name="Sprite" type="Sprite" parent="."]
-position = Vector2( 0.25067, 0.0626683 )
-rotation = 3.14159
+rotation = -6.28319
 scale = Vector2( 0.150006, 0.147068 )
 texture = ExtResource( 2 )
 [connection signal="body_entered" from="." to="." method="_on_Tool_body_entered"]
