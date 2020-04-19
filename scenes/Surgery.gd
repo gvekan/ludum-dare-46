@@ -3,6 +3,9 @@ extends Node2D
 
 var tool_scene = load("res://scenes/tools/Tool.tscn")
 
+#onready var BlueToolSprite = get_node("BlueTool")
+#onready var GreenToolSprite = get_node("GreenTool")
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -29,6 +32,10 @@ func _on_tool_clicked(clicked_tool, player):
 		add_child(dropped_tool)
 		dropped_tool.connect("tool_clicked", self, "_on_tool_clicked")
 	player.current_tool = clicked_tool.type
+	if player.get_name() == "BluePlayer":
+		$BlueTool.set_texture(clicked_tool.get_node("Sprite").texture)
+	elif player.get_name() == "GreenPlayer":
+		$GreenTool.set_texture(clicked_tool.get_node("Sprite").texture)
 	remove_child(clicked_tool)
 
 

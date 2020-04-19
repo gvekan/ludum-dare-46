@@ -4,8 +4,7 @@ class_name Tool
 const KNIFE = "knife"
 const APPLE = "apple"
 
-
-var type_assets = {
+export(Dictionary) var type_assets = {
 	KNIFE: preload("res://assets/knife.png"),
 	APPLE: preload("res://assets/apple.png")
 	}
