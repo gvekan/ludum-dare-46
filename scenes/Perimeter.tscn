@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Perimeter.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 528.182, 10 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10, 318.064 )
+
+[node name="Perimeter" type="Area2D"]
+script = ExtResource( 1 )
+
+[node name="Top" type="CollisionShape2D" parent="."]
+position = Vector2( 511.967, -11.0496 )
+shape = SubResource( 1 )
+
+[node name="Bottom" type="CollisionShape2D" parent="."]
+position = Vector2( 507.001, 610.256 )
+shape = SubResource( 1 )
+
+[node name="Left" type="CollisionShape2D" parent="."]
+position = Vector2( -9.8219, 300.796 )
+shape = SubResource( 2 )
+
+[node name="Right" type="CollisionShape2D" parent="."]
+position = Vector2( 1034.28, 300.218 )
+shape = SubResource( 2 )
+[connection signal="body_entered" from="." to="." method="_on_Perimeter_body_entered"]
