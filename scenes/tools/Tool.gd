@@ -25,6 +25,7 @@ var player_over_tool = null
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	add_to_group("tools")
 	set_type(type)
 
 func _input(event):
