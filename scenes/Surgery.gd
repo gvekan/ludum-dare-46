@@ -10,7 +10,7 @@ var tool_scene = load("res://scenes/tools/Tool.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Patient/Organ4.connect("organ_clicked",self,"_on_organ_clicked")
+	$Patient.connect("organ_clicked",self,"_on_Patient_organ_clicked")
 	
 	$Knife.connect("tool_clicked", self, "_on_tool_clicked")
 	$Apple.connect("tool_clicked", self, "_on_tool_clicked")
@@ -21,11 +21,6 @@ func _ready():
 #func _process(delta):
 #	pass
 
-func _on_organ_clicked(organ, player):
-	if player.current_tool == Tool.KNIFE:
-		organ.open()
-	
-
 func _on_tool_clicked(clicked_tool, player):
 	if player.current_tool:
 		var dropped_tool = tool_scene.instance()
@@ -35,3 +30,8 @@ func _on_tool_clicked(clicked_tool, player):
 		dropped_tool.connect("tool_clicked", self, "_on_tool_clicked")
 	player.current_tool = clicked_tool.type
 	remove_child(clicked_tool)
+
+
+func _on_Patient_organ_clicked(organ, player):
+	if player.current_tool == Tool.KNIFE:
+		organ.open()

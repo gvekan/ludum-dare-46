@@ -1,8 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://assets/surgery-640x640-big.png-2.png.png" type="Texture" id=1]
 [ext_resource path="res://scenes/Patient.gd" type="Script" id=2]
 [ext_resource path="res://scenes/organs/Organ4.tscn" type="PackedScene" id=3]
+[ext_resource path="res://scenes/organs/Organ17.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/organs/Organ15.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/organs/Organ18.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/organs/Organ14.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/organs/Organ12.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/organs/Organ13.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/organs/Organ16.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/organs/Organ11.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/organs/Organ10.tscn" type="PackedScene" id=12]
+[ext_resource path="res://scenes/organs/Organ7.tscn" type="PackedScene" id=13]
+[ext_resource path="res://scenes/organs/Organ5.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/organs/Organ6.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/organs/Organ8.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/organs/Organ9.tscn" type="PackedScene" id=17]
 
 [node name="Patient" type="Node2D"]
 script = ExtResource( 2 )
@@ -11,3 +25,31 @@ script = ExtResource( 2 )
 texture = ExtResource( 1 )
 
 [node name="Organ4" parent="." instance=ExtResource( 3 )]
+
+[node name="Organ5" parent="." instance=ExtResource( 14 )]
+
+[node name="Organ6" parent="." instance=ExtResource( 15 )]
+
+[node name="Organ7" parent="." instance=ExtResource( 13 )]
+
+[node name="Organ8" parent="." instance=ExtResource( 16 )]
+
+[node name="Organ9" parent="." instance=ExtResource( 17 )]
+
+[node name="Organ10" parent="." instance=ExtResource( 12 )]
+
+[node name="Organ11" parent="." instance=ExtResource( 11 )]
+
+[node name="Organ12" parent="." instance=ExtResource( 8 )]
+
+[node name="Organ13" parent="." instance=ExtResource( 9 )]
+
+[node name="Organ14" parent="." instance=ExtResource( 7 )]
+
+[node name="Organ15" parent="." instance=ExtResource( 5 )]
+
+[node name="Organ16" parent="." instance=ExtResource( 10 )]
+
+[node name="Organ17" parent="." instance=ExtResource( 4 )]
+
+[node name="Organ18" parent="." instance=ExtResource( 6 )]
