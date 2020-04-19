@@ -1,6 +1,8 @@
 extends KinematicBody2D
 
-export var speed = 200
+const DEFAULT_SPEED = 200
+const MAX_SPEED = 1500
+var speed = DEFAULT_SPEED
 
 var last_horizontal_input = ""
 var last_vertical_input = ""
@@ -35,6 +37,13 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if (Input.is_action_pressed(inputs["up"]) and last_vertical_input == inputs["up"]) or (Input.is_action_pressed(inputs["down"]) and last_vertical_input == inputs["down"]) or (Input.is_action_pressed(inputs["left"]) and last_horizontal_input == inputs["left"]) or (Input.is_action_pressed(inputs["right"]) and last_horizontal_input == inputs["right"]):
+		var speed_adder = (delta + 0.12) * DEFAULT_SPEED
+		if speed < MAX_SPEED:
+			speed += speed_adder
+	else:
+		speed = DEFAULT_SPEED
+		
 	if Input.is_action_just_pressed(inputs["left"]):
 		last_horizontal_input = inputs["left"]
 	elif Input.is_action_just_pressed(inputs["right"]):
@@ -65,7 +74,7 @@ func _process(delta):
 		else:
 			last_vertical_input = ""
 			
-	var y = 0	
+	var y = 0
 	if last_vertical_input == inputs["up"]:
 		y = -1
 	elif last_vertical_input == inputs["down"]:
