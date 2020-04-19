@@ -28,6 +28,11 @@ func _on_Organ_body_entered(body):
 func _on_Organ_body_exited(body):
 	player_over_organ = null
 	
-	
+func is_open():
+	return $Sprite.visible
+
 func open():
 	$Sprite.visible = true
+	
+func close():
+	$Sprite.visible = false
