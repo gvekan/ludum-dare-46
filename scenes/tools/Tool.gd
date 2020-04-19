@@ -2,11 +2,11 @@ extends Area2D
 class_name Tool
 
 const KNIFE = "knife"
-const APPLE = "apple"
+const BANDAGE = "bandage"
 
 var type_assets = {
 	KNIFE: preload("res://assets/knife.png"),
-	APPLE: preload("res://assets/apple.png")
+	BANDAGE: preload("res://assets/bandage.png")
 	}
 	
 export var type = KNIFE

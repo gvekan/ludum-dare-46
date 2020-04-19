@@ -8,6 +8,11 @@ export var start_time = 0
 
 signal done
 
+var default_digit_texture = preload("res://assets/digital-numbers.png")
+var default_colon_texture = preload("res://assets/colon.png")
+var panic_digit_texture = preload("res://assets/digital-numbers-red.png")
+var panic_colon_texture = preload("res://assets/colon-red.png")
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var tmp = start_time
@@ -38,3 +43,18 @@ func _on_Timer_timeout():
 		$Second.frame = 9
 	else:
 		$Second.frame -= 1
+
+func set_wait_time(time):
+	if $Timer.wait_time == time:
+		return
+	$Timer.wait_time = time
+	if time < 1:
+		$Second.set_texture(panic_digit_texture)
+		$Second10.set_texture(panic_digit_texture)
+		$Minute.set_texture(panic_digit_texture)
+		$Colon.set_texture(panic_colon_texture)
+	else:
+		$Second.set_texture(default_digit_texture)
+		$Second10.set_texture(default_digit_texture)
+		$Minute.set_texture(default_digit_texture)
+		$Colon.set_texture(default_colon_texture)

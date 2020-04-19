@@ -9,14 +9,14 @@ var tool_scene = load("res://scenes/tools/Tool.tscn")
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var count_open_organs = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Patient.connect("organ_clicked",self,"_on_Patient_organ_clicked")
 	
 	$Knife.connect("tool_clicked", self, "_on_tool_clicked")
-	$Apple.connect("tool_clicked", self, "_on_tool_clicked")
+	$Bandage.connect("tool_clicked", self, "_on_tool_clicked")
 	
 
 
@@ -41,8 +41,23 @@ func _on_tool_clicked(clicked_tool, player):
 
 func _on_Patient_organ_clicked(organ, player):
 	if player.current_tool == Tool.KNIFE:
+		if organ.is_open():
+			return
 		organ.open()
+		count_open_organs += 1
+		$Clock.set_wait_time(max(1 - 0.5 - 0.1*count_open_organs, 0.1))
+	elif player.current_tool == Tool.BANDAGE:
+		if not organ.is_open():
+			return
+		organ.close()
+		count_open_organs -= 1
+		if count_open_organs > 0:
+			change_panic_clock()
+		else:
+			$Clock.set_wait_time(1)
 
+func change_panic_clock():
+	$Clock.set_wait_time(max(1 - 0.5 - 0.1*count_open_organs, 0.1))
 
 
 func _on_Clock_done():
