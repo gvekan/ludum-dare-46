@@ -1,23 +1,28 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Patient.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Surgery.gd" type="Script" id=3]
 [ext_resource path="res://scenes/tools/Tool.tscn" type="PackedScene" id=4]
+[ext_resource path="res://assets/background.png" type="Texture" id=5]
 
 [node name="Surgery" type="Node2D"]
 script = ExtResource( 3 )
 
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 5 )
+centered = false
+
 [node name="Patient" parent="." instance=ExtResource( 1 )]
-position = Vector2( 328.494, 314.226 )
+position = Vector2( 350, 370 )
 
 [node name="Knife" parent="." instance=ExtResource( 4 )]
-position = Vector2( 808.944, 241.476 )
+position = Vector2( 868.164, 537.575 )
 
 [node name="Apple" parent="." instance=ExtResource( 4 )]
-position = Vector2( 725.442, 240.58 )
+position = Vector2( 788.363, 538.53 )
 type = "apple"
 
 [node name="Player" parent="." instance=ExtResource( 2 )]
-position = Vector2( 461.941, 509.668 )
+position = Vector2( 467.449, 526.942 )
 z_index = 1
