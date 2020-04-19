@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scenes/Surgery.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Surgery1.gd" type="Script" id=2]
+
+[node name="Surgery1" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="RichTextLabel_" parent="TaskText" index="0"]
+text = "Hello Heart!
+Try to fix a broken heart on your first surgery <"
+
+[node name="Clock" parent="." index="4"]
+start_time = 200
