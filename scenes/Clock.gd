@@ -15,6 +15,7 @@ var panic_colon_texture = preload("res://assets/colon-red.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Ekg.play("default")
 	var tmp = start_time
 	$Second.frame = tmp % 10
 	tmp /= 10
@@ -33,6 +34,9 @@ func _on_Timer_timeout():
 		if $Second10.frame == 0:
 			if $Minute.frame == 0:
 				emit_signal("done")
+				$Ekg.stop()
+				$Ekg.set_animation("default")
+				$Ekg.set_frame(0)
 				$Timer.stop()
 				return
 			else:
@@ -49,11 +53,13 @@ func set_wait_time(time):
 		return
 	$Timer.wait_time = time
 	if time < 1:
+		$Ekg.play("panic")
 		$Second.set_texture(panic_digit_texture)
 		$Second10.set_texture(panic_digit_texture)
 		$Minute.set_texture(panic_digit_texture)
 		$Colon.set_texture(panic_colon_texture)
 	else:
+		$Ekg.play("default")
 		$Second.set_texture(default_digit_texture)
 		$Second10.set_texture(default_digit_texture)
 		$Minute.set_texture(default_digit_texture)
