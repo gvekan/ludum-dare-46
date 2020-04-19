@@ -7,9 +7,6 @@ var last_vertical_input = ""
 
 var current_tool = null
 
-var on_perimeter = false
-
-
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -61,6 +58,4 @@ func _process(delta):
 	var velocity = Vector2(x, y).normalized() * speed
 	move_and_slide(velocity)
 	
-func on_perimeter():
-	on_perimeter = true
-	
+

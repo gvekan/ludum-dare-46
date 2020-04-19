@@ -12,8 +12,6 @@ var tool_scene = load("res://scenes/tools/Tool.tscn")
 func _ready():
 	$Patient.connect("organ_clicked",self,"_on_Patient_organ_clicked")
 	
-	$Perimeter.connect("on_perimeter",self,"_on_Perimiter")
-	
 	$Knife.connect("tool_clicked", self, "_on_tool_clicked")
 	$Apple.connect("tool_clicked", self, "_on_tool_clicked")
 	
@@ -38,5 +36,3 @@ func _on_Patient_organ_clicked(organ, player):
 	if player.current_tool == Tool.KNIFE:
 		organ.open()
 
-func _on_Perimiter(player):
-	print("On perimeter")
