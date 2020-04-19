@@ -36,3 +36,7 @@ func _on_Patient_organ_clicked(organ, player):
 	if player.current_tool == Tool.KNIFE:
 		organ.open()
 
+
+
+func _on_Clock_done():
+	print("Game over")
