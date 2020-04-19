@@ -1,12 +1,10 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/Patient.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Surgery.gd" type="Script" id=3]
 [ext_resource path="res://scenes/tools/Tool.tscn" type="PackedScene" id=4]
-[ext_resource path="res://assets/knife.png" type="Texture" id=5]
 [ext_resource path="res://assets/background.png" type="Texture" id=6]
-[ext_resource path="res://assets/apple.png" type="Texture" id=7]
 [ext_resource path="res://scenes/Clock.tscn" type="PackedScene" id=8]
 
 [sub_resource type="RectangleShape2D" id=1]
@@ -35,22 +33,20 @@ scale = Vector2( 0.18, 0.18 )
 
 [node name="Knife" parent="." instance=ExtResource( 4 )]
 position = Vector2( 868.164, 537.575 )
-type_assets = {
-"apple": ExtResource( 7 ),
-"knife": ExtResource( 5 )
-}
 
 [node name="Apple" parent="." instance=ExtResource( 4 )]
 position = Vector2( 788.363, 538.53 )
-type_assets = {
-"apple": ExtResource( 7 ),
-"knife": ExtResource( 5 )
-}
 type = "apple"
 
-[node name="BluePlayer" parent="." instance=ExtResource( 2 )]
-position = Vector2( 467.449, 526.942 )
+[node name="YSort" type="YSort" parent="."]
+
+[node name="BluePlayer" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 64.7783, 430.355 )
 z_index = 1
+
+[node name="GreenPlayer" parent="YSort" instance=ExtResource( 2 )]
+position = Vector2( 949.541, 463.887 )
+blue = false
 
 [node name="Left" type="StaticBody2D" parent="."]
 position = Vector2( -10, 300 )

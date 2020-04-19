@@ -32,9 +32,9 @@ func _on_tool_clicked(clicked_tool, player):
 		add_child(dropped_tool)
 		dropped_tool.connect("tool_clicked", self, "_on_tool_clicked")
 	player.current_tool = clicked_tool.type
-	if player.get_name() == "BluePlayer":
+	if player.blue:
 		$BlueTool.set_texture(clicked_tool.get_node("Sprite").texture)
-	elif player.get_name() == "GreenPlayer":
+	else:
 		$GreenTool.set_texture(clicked_tool.get_node("Sprite").texture)
 	remove_child(clicked_tool)
 
