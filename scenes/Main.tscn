@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/RedButton.tres" type="StyleBox" id=2]
 [ext_resource path="res://scenes/fonts/Early GameBoy.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://scenes/KeyLayout.tscn" type="PackedScene" id=4]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 28
 font_data = ExtResource( 3 )
 
@@ -18,7 +19,7 @@ z_index = 3
 [node name="ColorRect" type="ColorRect" parent="Pause"]
 margin_right = 1030.0
 margin_bottom = 600.0
-color = Color( 0, 0, 0, 0.27451 )
+color = Color( 0, 0, 0, 0.509804 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -31,7 +32,7 @@ margin_bottom = 520.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Exit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -45,7 +46,7 @@ margin_bottom = 400.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -59,10 +60,13 @@ margin_bottom = 280.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Continue"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="KeyLayout" parent="Pause" instance=ExtResource( 4 )]
+position = Vector2( 392, 40 )
 [connection signal="pressed" from="Pause/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Pause/Continue" to="." method="_on_Continue_pressed"]
