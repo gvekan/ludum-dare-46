@@ -5,7 +5,7 @@ var tool_scene = load("res://scenes/tools/Tool.tscn")
 
 var count_open_organs = 0
 
-var running = false
+var running = true
 
 var playback_pos = 0.0
 
@@ -79,7 +79,7 @@ func start():
 	running = true
 	$Clock.start()
 	$Common/YSort/BluePlayer.running = true
-	$Common/YSort/GreenPlayer.running = false
+	$Common/YSort/GreenPlayer.running = true
 	$Common/AudioStreamPlayer.play(playback_pos)
 	
 	
