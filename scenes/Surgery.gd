@@ -5,6 +5,8 @@ var tool_scene = load("res://scenes/tools/Tool.tscn")
 
 var count_open_organs = 0
 
+var running = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Common/Patient.connect("organ_clicked",self,"_on_Patient_organ_clicked")
@@ -13,9 +15,13 @@ func _ready():
 
 
 func _on_tool_clicked(clicked_tool, player):
+	if not running:
+		return
 	tool_clicked(clicked_tool, player)
 
 func _on_Patient_organ_clicked(organ, player):
+	if not running:
+		return
 	organ_clicked(organ, player)
 	
 func _on_Clock_done():
@@ -56,10 +62,13 @@ func organ_clicked(organ, player):
 			$Clock.set_wait_time(1)
 
 func time_is_up():
-	print("Game over")
+	pause()
 	
 
-
-
-func _on_Button_pressed():
-	print("pause")
+func pause():
+	running = false
+	$Clock.stop()
+	$Common/YSort/BluePlayer.running = false
+	$Common/YSort/GreenPlayer.running = false
+	$Common/AudioStreamPlayer.stop()
+	

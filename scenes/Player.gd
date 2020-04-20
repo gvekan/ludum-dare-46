@@ -9,6 +9,8 @@ var last_vertical_input = ""
 
 var current_tool = null
 
+var running = true
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -37,6 +39,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	if not running:
+		return
 	if (Input.is_action_pressed(inputs["up"]) and last_vertical_input == inputs["up"]) or (Input.is_action_pressed(inputs["down"]) and last_vertical_input == inputs["down"]) or (Input.is_action_pressed(inputs["left"]) and last_horizontal_input == inputs["left"]) or (Input.is_action_pressed(inputs["right"]) and last_horizontal_input == inputs["right"]):
 		var speed_adder = (delta + 0.12) * DEFAULT_SPEED
 		if speed < MAX_SPEED:

@@ -16,14 +16,14 @@ extents = Vector2( 10, 300 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 512, 10 )
 
-[sub_resource type="InputEventAction" id=4]
+[sub_resource type="InputEventAction" id=3]
 action = "ui_cancel"
 pressed = true
 
-[sub_resource type="ShortCut" id=5]
-shortcut = SubResource( 4 )
+[sub_resource type="ShortCut" id=4]
+shortcut = SubResource( 3 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=5]
 size = 19
 font_data = ExtResource( 7 )
 
@@ -33,10 +33,10 @@ script = ExtResource( 3 )
 [node name="Common" type="Node2D" parent="."]
 
 [node name="YSort" type="YSort" parent="Common"]
+z_index = 1
 
 [node name="BluePlayer" parent="Common/YSort" instance=ExtResource( 2 )]
 position = Vector2( 64.7783, 430.355 )
-z_index = 1
 
 [node name="GreenPlayer" parent="Common/YSort" instance=ExtResource( 2 )]
 position = Vector2( 949.541, 463.887 )
@@ -86,14 +86,14 @@ scale = Vector2( 0.18, 0.18 )
 [node name="Patient" parent="Common" instance=ExtResource( 1 )]
 position = Vector2( 350, 370 )
 
-[node name="Node2D" type="Node2D" parent="Common"]
+[node name="Pause" type="Node2D" parent="Common"]
 position = Vector2( 10, 10 )
 
-[node name="Button" type="TextureButton" parent="Common/Node2D"]
+[node name="Button" type="TextureButton" parent="Common/Pause"]
 anchor_right = 10.0
 margin_right = 40.0
 margin_bottom = 40.0
-shortcut = SubResource( 5 )
+shortcut = SubResource( 4 )
 texture_normal = ExtResource( 9 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -105,7 +105,7 @@ position = Vector2( 535, 22 )
 [node name="RichTextLabel" type="RichTextLabel" parent="TaskText"]
 margin_right = 340.0
 margin_bottom = 120.0
-custom_fonts/normal_font = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 5 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 text = "Task: Repair broken heart and insert missing apple
 "
@@ -123,5 +123,4 @@ type = "bandage"
 
 [node name="Clock" parent="." instance=ExtResource( 8 )]
 start_time = 100
-[connection signal="pressed" from="Common/Node2D/Button" to="." method="_on_Button_pressed"]
 [connection signal="done" from="Clock" to="." method="_on_Clock_done"]

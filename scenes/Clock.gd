@@ -36,6 +36,16 @@ func game_over():
 	$Ekg.set_animation("default")
 	$Ekg.set_frame(0)
 	emit_signal("done")
+	
+func start():
+	$Timer.start()
+	$Ekg.play()
+		
+
+func stop():
+	$Timer.stop()
+	$Ekg.stop()
+	
 
 
 func _on_Timer_timeout():
