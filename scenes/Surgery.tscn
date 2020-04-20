@@ -4,7 +4,7 @@
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/Surgery.gd" type="Script" id=3]
 [ext_resource path="res://scenes/tools/Tool.tscn" type="PackedScene" id=4]
-[ext_resource path="res://8bitNew.ogg" type="AudioStream" id=5]
+[ext_resource path="res://sounds/8bitNew.ogg" type="AudioStream" id=5]
 [ext_resource path="res://assets/background.png" type="Texture" id=6]
 [ext_resource path="res://scenes/fonts/Early GameBoy.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/Clock.tscn" type="PackedScene" id=8]
@@ -48,7 +48,7 @@ position = Vector2( 64.7783, 430.355 )
 position = Vector2( 949.541, 463.887 )
 blue = false
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Common"]
+[node name="BackgroundMusic" type="AudioStreamPlayer" parent="Common"]
 stream = ExtResource( 5 )
 volume_db = -48.466
 autoplay = true
