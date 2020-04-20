@@ -49,3 +49,4 @@ func _on_Continue_pressed():
 	
 func _on_game_over():
 	$GameOver.visible = true
+	$GameOver/DeadSound.play(0)
