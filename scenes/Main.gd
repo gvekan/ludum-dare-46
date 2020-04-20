@@ -14,8 +14,21 @@ func _ready():
 func set_current_surgery(surgery_instance):
 	current_surgery = surgery_instance
 	add_child(current_surgery)
-	current_surgery.get_node("Common/Pause/Button").connect("pressed", self, "pause_current_surgery")
+	current_surgery.get_node("Common/Pause").connect("pressed", self, "_on_Pause_current_surgery")
 
-func pause_current_surgery():
-	current_surgery.pause()
+func _on_Pause_current_surgery():
+	current_surgery.stop()
+	$Pause.visible = true
 	# Display pause scene
+
+
+func _on_Restart_pressed():
+	$Pause.visible = false
+	remove_child(current_surgery)
+	set_current_surgery(SURGERY1.instance())
+	
+
+
+func _on_Continue_pressed():
+	$Pause.visible = false
+	current_surgery.start()

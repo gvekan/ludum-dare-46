@@ -7,6 +7,8 @@ var count_open_organs = 0
 
 var running = false
 
+var playback_pos = 0.0
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	$Common/Patient.connect("organ_clicked",self,"_on_Patient_organ_clicked")
@@ -62,13 +64,22 @@ func organ_clicked(organ, player):
 			$Clock.set_wait_time(1)
 
 func time_is_up():
-	pause()
+	stop()
 	
 
-func pause():
+func stop():
 	running = false
 	$Clock.stop()
 	$Common/YSort/BluePlayer.running = false
 	$Common/YSort/GreenPlayer.running = false
+	playback_pos = $Common/AudioStreamPlayer.get_playback_position()
 	$Common/AudioStreamPlayer.stop()
+	
+func start():
+	running = true
+	$Clock.start()
+	$Common/YSort/BluePlayer.running = true
+	$Common/YSort/GreenPlayer.running = false
+	$Common/AudioStreamPlayer.play(playback_pos)
+	
 	

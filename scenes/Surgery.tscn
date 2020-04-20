@@ -18,7 +18,6 @@ extents = Vector2( 512, 10 )
 
 [sub_resource type="InputEventAction" id=3]
 action = "ui_cancel"
-pressed = true
 
 [sub_resource type="ShortCut" id=4]
 shortcut = SubResource( 3 )
@@ -86,13 +85,13 @@ scale = Vector2( 0.18, 0.18 )
 [node name="Patient" parent="Common" instance=ExtResource( 1 )]
 position = Vector2( 350, 370 )
 
-[node name="Pause" type="Node2D" parent="Common"]
-position = Vector2( 10, 10 )
-
-[node name="Button" type="TextureButton" parent="Common/Pause"]
+[node name="Pause" type="TextureButton" parent="Common"]
 anchor_right = 10.0
-margin_right = 40.0
-margin_bottom = 40.0
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 50.0
+margin_bottom = 50.0
+shortcut_in_tooltip = false
 shortcut = SubResource( 4 )
 texture_normal = ExtResource( 9 )
 __meta__ = {
