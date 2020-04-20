@@ -68,5 +68,6 @@ __meta__ = {
 
 [node name="KeyLayout" parent="Pause" instance=ExtResource( 4 )]
 position = Vector2( 392, 40 )
+[connection signal="pressed" from="Pause/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Pause/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Pause/Continue" to="." method="_on_Continue_pressed"]
