@@ -1,6 +1,6 @@
 extends Node2D
 
-
+signal game_over
 var tool_scene = load("res://scenes/tools/Tool.tscn")
 
 var count_open_organs = 0
@@ -64,6 +64,7 @@ func organ_clicked(organ, player):
 			$Clock.set_wait_time(1)
 
 func time_is_up():
+	emit_signal("game_over")
 	stop()
 	
 
