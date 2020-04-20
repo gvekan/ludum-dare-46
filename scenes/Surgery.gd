@@ -73,14 +73,14 @@ func stop():
 	$Clock.stop()
 	$Common/YSort/BluePlayer.running = false
 	$Common/YSort/GreenPlayer.running = false
-	playback_pos = $Common/AudioStreamPlayer.get_playback_position()
-	$Common/AudioStreamPlayer.stop()
+	playback_pos = $Common/BackgroundMusic.get_playback_position()
+	$Common/BackgroundMusic.stop()
 	
 func start():
 	running = true
 	$Clock.start()
 	$Common/YSort/BluePlayer.running = true
 	$Common/YSort/GreenPlayer.running = true
-	$Common/AudioStreamPlayer.play(playback_pos)
+	$Common/BackgroundMusic.play(playback_pos)
 	
 	
