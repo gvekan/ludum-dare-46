@@ -15,29 +15,34 @@ var panic_colon_texture = preload("res://assets/colon-red.png")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Ekg.play("default")
-	var tmp = start_time
+	start_clock_with(start_time)
+
+func start_clock_with(time):
+	if time < 1:
+		game_over()
+		return
+	var tmp = time
 	$Second.frame = tmp % 10
 	tmp /= 10
 	$Second10.frame = min(tmp % 10, 5)
 	tmp /= 10
 	$Minute.frame = min(tmp, 9)
+	$Timer.start()
+	$Ekg.play("default")
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func game_over():
+	$Timer.stop()
+	$Ekg.stop()
+	$Ekg.set_animation("default")
+	$Ekg.set_frame(0)
+	emit_signal("done")
 
 
 func _on_Timer_timeout():
 	if $Second.frame == 0:
 		if $Second10.frame == 0:
 			if $Minute.frame == 0:
-				emit_signal("done")
-				$Ekg.stop()
-				$Ekg.set_animation("default")
-				$Ekg.set_frame(0)
-				$Timer.stop()
+				game_over()
 				return
 			else:
 				$Minute.frame -= 1
