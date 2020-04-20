@@ -25,6 +25,12 @@ func start_clock_with(time):
 	$Timer.start()
 	$Ekg.play("default")
 	
+func set_time_and_test_game_over(time):
+	if time < 1:
+		game_over()
+		return
+	set_time(time)
+	
 func set_time(time):
 	var tmp = time
 	$Second.frame = tmp % 10
@@ -33,8 +39,11 @@ func set_time(time):
 	tmp /= 10
 	$Minute.frame = min(tmp, 9)
 	
+func get_time():
+	return $Minute.frame*100 + $Second10.frame*10 + $Second.frame
 
 func game_over():
+	set_time(0)
 	$Timer.stop()
 	$Ekg.stop()
 	$Ekg.set_animation("default")

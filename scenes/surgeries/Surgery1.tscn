@@ -1,10 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/Surgery.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/surgeries/Surgery1.gd" type="Script" id=2]
+[ext_resource path="res://assets/broken-heart.png" type="Texture" id=3]
 
 [node name="Surgery1" instance=ExtResource( 1 )]
 script = ExtResource( 2 )
 
-[node name="Clock" parent="." index="4"]
+[node name="Clock" parent="." index="2"]
 start_time = 45
+
+[node name="BrokenHeart" type="Sprite" parent="OrganInventory" index="15"]
+position = Vector2( 351.001, 369.207 )
+texture = ExtResource( 3 )

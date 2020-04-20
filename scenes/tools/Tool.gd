@@ -6,6 +6,8 @@ const BANDAGE = "bandage"
 const AXE = "axe"
 const CHOCOLATE = "chocolate"
 
+const sharp_tools = [KNIFE, AXE]
+
 var type_assets = {
 	KNIFE: preload("res://assets/scalpel.png"),
 	BANDAGE: preload("res://assets/bandaid.png"),
