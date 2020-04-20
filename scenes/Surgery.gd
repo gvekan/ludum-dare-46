@@ -59,3 +59,7 @@ func time_is_up():
 	print("Game over")
 	
 
+
+
+func _on_Button_pressed():
+	print("pause")

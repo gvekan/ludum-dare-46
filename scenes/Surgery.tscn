@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://scenes/Patient.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -8,12 +8,20 @@
 [ext_resource path="res://assets/background.png" type="Texture" id=6]
 [ext_resource path="res://scenes/fonts/Early GameBoy.ttf" type="DynamicFontData" id=7]
 [ext_resource path="res://scenes/Clock.tscn" type="PackedScene" id=8]
+[ext_resource path="res://assets/pause-button.png" type="Texture" id=9]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 300 )
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 512, 10 )
+
+[sub_resource type="InputEventAction" id=4]
+action = "ui_cancel"
+pressed = true
+
+[sub_resource type="ShortCut" id=5]
+shortcut = SubResource( 4 )
 
 [sub_resource type="DynamicFont" id=3]
 size = 19
@@ -78,6 +86,19 @@ scale = Vector2( 0.18, 0.18 )
 [node name="Patient" parent="Common" instance=ExtResource( 1 )]
 position = Vector2( 350, 370 )
 
+[node name="Node2D" type="Node2D" parent="Common"]
+position = Vector2( 10, 10 )
+
+[node name="Button" type="TextureButton" parent="Common/Node2D"]
+anchor_right = 10.0
+margin_right = 40.0
+margin_bottom = 40.0
+shortcut = SubResource( 5 )
+texture_normal = ExtResource( 9 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
 [node name="TaskText" type="Node2D" parent="."]
 position = Vector2( 535, 22 )
 
@@ -102,4 +123,5 @@ type = "bandage"
 
 [node name="Clock" parent="." instance=ExtResource( 8 )]
 start_time = 100
+[connection signal="pressed" from="Common/Node2D/Button" to="." method="_on_Button_pressed"]
 [connection signal="done" from="Clock" to="." method="_on_Clock_done"]
