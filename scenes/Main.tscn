@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scenes/Main.gd" type="Script" id=1]
 [ext_resource path="res://scenes/RedButton.tres" type="StyleBox" id=2]
 [ext_resource path="res://scenes/fonts/Early GameBoy.ttf" type="DynamicFontData" id=3]
 [ext_resource path="res://scenes/KeyLayout.tscn" type="PackedScene" id=4]
+[ext_resource path="res://sounds/dead.wav" type="AudioStream" id=5]
 
 [sub_resource type="DynamicFont" id=1]
 size = 28
@@ -200,6 +201,8 @@ scroll_active = false
 __meta__ = {
 "_edit_use_anchors_": false
 }
+[node name="DeadSound" type="AudioStreamPlayer2D" parent="GameOver"]
+stream = ExtResource( 5 )
 [connection signal="pressed" from="Pause/Exit" to="." method="_on_Exit_pressed"]
 [connection signal="pressed" from="Pause/Restart" to="." method="_on_Restart_pressed"]
 [connection signal="pressed" from="Pause/Continue" to="." method="_on_Continue_pressed"]

@@ -55,6 +55,7 @@ func _on_Continue_pressed():
 func _on_game_over():
 	$GameOver.visible = true
 	current_surgery_level = 1
+	$GameOver/DeadSound.play(0)
 	
 func _on_Surgery_completed():
 	$Completed.visible = true
