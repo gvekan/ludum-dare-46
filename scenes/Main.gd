@@ -29,13 +29,13 @@ func _on_Pause_current_surgery():
 
 func _on_Start_pressed():
 	remove_child(start_scene)
+	current_surgery_level = 1
 	set_current_surgery(surgeries[current_surgery_level-1])
 
 func _on_Exit_pressed():
 	$Finished.visible = false
 	$Pause.visible = false
 	$GameOver.visible = false
-	current_surgery_level = 1
 	remove_child(current_surgery)
 	start_scene = START.instance()
 	start_scene.get_node("StartButton").connect("pressed",self,"_on_Start_pressed")

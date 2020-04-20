@@ -42,7 +42,7 @@ func _ready():
 		node.visible = false
 		
 func _process(delta):
-	if task_completed and count_open_organs == 0:
+	if running and task_completed and count_open_organs == 0:
 		emit_signal("completed")
 		stop()
 
