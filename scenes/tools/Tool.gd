@@ -5,12 +5,14 @@ const KNIFE = "knife"
 const BANDAGE = "bandage"
 const AXE = "axe"
 const CHOCOLATE = "chocolate"
+const SCREWDRIVER = "screwdriver"
 
 var type_assets = {
 	KNIFE: preload("res://assets/scalpel.png"),
 	BANDAGE: preload("res://assets/bandaid.png"),
 	AXE: preload("res://assets/axe.png"),
-	CHOCOLATE: preload("res://assets/chocolate.png")
+	CHOCOLATE: preload("res://assets/chocolate.png"),
+	SCREWDRIVER: preload("res://assets/screwdriver.png")
 	}
 	
 export var type = KNIFE

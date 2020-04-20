@@ -210,4 +210,8 @@ type = "axe"
 [node name="Chocolate" parent="ToolInventory" instance=ExtResource( 4 )]
 position = Vector2( 790.166, 459.061 )
 type = "chocolate"
+
+[node name="Screwdriver" parent="ToolInventory" instance=ExtResource( 4 )]
+position = Vector2( 870.573, 458.613 )
+type = "screwdriver"
 [connection signal="done" from="Clock" to="." method="_on_Clock_done"]
