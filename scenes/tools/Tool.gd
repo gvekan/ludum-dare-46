@@ -3,10 +3,14 @@ class_name Tool
 
 const KNIFE = "knife"
 const BANDAGE = "bandage"
+const AXE = "axe"
+const CHOCOLATE = "chocolate"
 
 var type_assets = {
-	KNIFE: preload("res://assets/knife.png"),
-	BANDAGE: preload("res://assets/bandage.png")
+	KNIFE: preload("res://assets/scalpel.png"),
+	BANDAGE: preload("res://assets/bandaid.png"),
+	AXE: preload("res://assets/axe.png"),
+	CHOCOLATE: preload("res://assets/chocolate.png")
 	}
 	
 export var type = KNIFE

@@ -76,11 +76,9 @@ centered = false
 
 [node name="BlueTool" type="Sprite" parent="Common"]
 position = Vector2( 110.253, 59.4924 )
-scale = Vector2( 0.18, 0.18 )
 
 [node name="GreenTool" type="Sprite" parent="Common"]
 position = Vector2( 950.162, 60.1248 )
-scale = Vector2( 0.18, 0.18 )
 
 [node name="Patient" parent="Common" instance=ExtResource( 1 )]
 position = Vector2( 350, 370 )
@@ -114,11 +112,19 @@ __meta__ = {
 }
 
 [node name="Knife" parent="." instance=ExtResource( 4 )]
-position = Vector2( 868.164, 537.575 )
+position = Vector2( 870.117, 539.773 )
 
 [node name="Bandage" parent="." instance=ExtResource( 4 )]
-position = Vector2( 788.363, 538.53 )
+position = Vector2( 789.828, 539.262 )
 type = "bandage"
+
+[node name="Axe" parent="." instance=ExtResource( 4 )]
+position = Vector2( 950.817, 539.249 )
+type = "axe"
+
+[node name="Chocolate" parent="." instance=ExtResource( 4 )]
+position = Vector2( 790.166, 459.061 )
+type = "chocolate"
 
 [node name="Clock" parent="." instance=ExtResource( 8 )]
 start_time = 100
