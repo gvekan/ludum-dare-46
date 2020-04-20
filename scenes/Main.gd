@@ -14,10 +14,6 @@ func _ready():
 	start_scene.get_node("StartButton").connect("pressed",self,"_on_Start_pressed")
 	add_child(start_scene)
 	
-	
-func start_first_surgery():
-	set_current_surgery(SURGERY1.instance())
-	
 func set_current_surgery(surgery_instance):
 	current_surgery = surgery_instance
 	add_child(current_surgery)
@@ -30,7 +26,7 @@ func _on_Pause_current_surgery():
 
 func _on_Start_pressed():
 	remove_child(start_scene)
-	start_first_surgery()
+	set_current_surgery(SURGERY1.instance())
 
 func _on_Exit_pressed():
 	$Pause.visible = false
