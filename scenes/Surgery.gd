@@ -10,7 +10,21 @@ var running = true
 var playback_pos = 0.0
 
 var organ_inventory = {
-	"Organ4": "Brain"
+	"Organ4": "Brain",
+	"Organ5": "Teeth",
+	"Organ6": "Bone2",
+	"Organ7": "Throat",
+	"Organ8": "Bone1",
+	"Organ9": "Bone3",
+	"Organ10": "Lung1",
+	"Organ11": "Heart",
+	"Organ12": "Lung2",
+	"Organ13": "Bone4",
+	"Organ14": "Hand",
+	"Organ15": "Bone5",
+	"Organ16": "Bone6",
+	"Organ17": "Bone7",
+	"Organ18": "Bone8"
 }
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +32,8 @@ func _ready():
 	$Common/Patient.connect("organ_clicked",self,"_on_Patient_organ_clicked")
 	for node in get_tree().get_nodes_in_group("tools"):
 		node.connect("tool_clicked", self, "_on_tool_clicked")
+	for node in $OrganInventory.get_children():
+		node.visible = false
 
 
 func _on_tool_clicked(clicked_tool, player):
@@ -53,6 +69,9 @@ func tool_clicked(clicked_tool, player):
 func organ_clicked(organ, player):
 	if player.current_tool == Tool.KNIFE and not organ.is_open():
 		open_organ(organ)
+		if organ_inventory[organ.name] == "Hand":
+			$Clock.set_time(5)
+			return
 		count_open_organs += 1
 		$Clock.set_wait_time(max(1 - 0.5 - 0.1*count_open_organs, 0.1))
 	elif player.current_tool == Tool.BANDAGE and organ.is_open():
@@ -72,11 +91,11 @@ func interact_with_organ(organ_object, organ, tool_type):
 	
 func open_organ(organ):
 	organ.open()
-	get_node(organ_inventory[organ.name]).visible = true
+	$OrganInventory.get_node(organ_inventory[organ.name]).visible = true
 
 func close_organ(organ):
 	organ.close()
-	get_node(organ_inventory[organ.name]).visible = false
+	$OrganInventory.get_node(organ_inventory[organ.name]).visible = false
 	
 
 func time_is_up():

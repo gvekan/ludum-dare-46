@@ -9,6 +9,7 @@ extents = Vector2( 50.1205, 84.7652 )
 [node name="Organ14" instance=ExtResource( 2 )]
 
 [node name="Sprite" parent="." index="0"]
+visible = true
 texture = ExtResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="1"]

@@ -21,14 +21,18 @@ func start_clock_with(time):
 	if time < 1:
 		game_over()
 		return
+	set_time(time)
+	$Timer.start()
+	$Ekg.play("default")
+	
+func set_time(time):
 	var tmp = time
 	$Second.frame = tmp % 10
 	tmp /= 10
 	$Second10.frame = min(tmp % 10, 5)
 	tmp /= 10
 	$Minute.frame = min(tmp, 9)
-	$Timer.start()
-	$Ekg.play("default")
+	
 
 func game_over():
 	$Timer.stop()

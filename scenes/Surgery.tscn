@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=22 format=2]
 
 [ext_resource path="res://scenes/Patient.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=2]
@@ -10,6 +10,12 @@
 [ext_resource path="res://scenes/Clock.tscn" type="PackedScene" id=8]
 [ext_resource path="res://assets/pause-button.png" type="Texture" id=9]
 [ext_resource path="res://assets/brain.png" type="Texture" id=10]
+[ext_resource path="res://assets/teeth.png" type="Texture" id=11]
+[ext_resource path="res://assets/throat.png" type="Texture" id=12]
+[ext_resource path="res://assets/heart.png" type="Texture" id=13]
+[ext_resource path="res://assets/bone.png" type="Texture" id=14]
+[ext_resource path="res://assets/lung.png" type="Texture" id=15]
+[ext_resource path="res://assets/hand.png" type="Texture" id=16]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 300 )
@@ -112,27 +118,96 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Knife" parent="." instance=ExtResource( 4 )]
-position = Vector2( 870.117, 539.773 )
-
-[node name="Bandage" parent="." instance=ExtResource( 4 )]
-position = Vector2( 789.828, 539.262 )
-type = "bandage"
-
-[node name="Axe" parent="." instance=ExtResource( 4 )]
-position = Vector2( 950.817, 539.249 )
-type = "axe"
-
-[node name="Chocolate" parent="." instance=ExtResource( 4 )]
-position = Vector2( 790.166, 459.061 )
-type = "chocolate"
-
 [node name="Clock" parent="." instance=ExtResource( 8 )]
 start_time = 100
 
-[node name="Brain" type="Sprite" parent="."]
-visible = false
-position = Vector2( 27.2352, 46.0904 )
+[node name="OrganInventory" type="Node" parent="."]
+
+[node name="Brain" type="Sprite" parent="OrganInventory"]
+position = Vector2( 29.126, 49.2416 )
 texture = ExtResource( 10 )
 centered = false
+
+[node name="Teeth" type="Sprite" parent="OrganInventory"]
+position = Vector2( 349.844, 369.813 )
+texture = ExtResource( 11 )
+
+[node name="Throat" type="Sprite" parent="OrganInventory"]
+position = Vector2( 349.035, 369.696 )
+texture = ExtResource( 12 )
+
+[node name="Lung1" type="Sprite" parent="OrganInventory"]
+position = Vector2( 351.128, 368.272 )
+texture = ExtResource( 15 )
+
+[node name="Lung2" type="Sprite" parent="OrganInventory"]
+position = Vector2( 350.56, 356.896 )
+texture = ExtResource( 15 )
+flip_v = true
+
+[node name="Heart" type="Sprite" parent="OrganInventory"]
+position = Vector2( 351.952, 370.05 )
+texture = ExtResource( 13 )
+
+[node name="Hand" type="Sprite" parent="OrganInventory"]
+position = Vector2( 356.691, 361.86 )
+scale = Vector2( 0.1, 0.1 )
+texture = ExtResource( 16 )
+
+[node name="Bone1" type="Sprite" parent="OrganInventory"]
+position = Vector2( 350.358, 500.024 )
+texture = ExtResource( 14 )
+
+[node name="Bone2" type="Sprite" parent="OrganInventory"]
+position = Vector2( 350.358, 368.924 )
+texture = ExtResource( 14 )
+
+[node name="Bone3" type="Sprite" parent="OrganInventory"]
+position = Vector2( 136.093, 389.798 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+texture = ExtResource( 14 )
+
+[node name="Bone4" type="Sprite" parent="OrganInventory"]
+position = Vector2( 136.093, 650.186 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+texture = ExtResource( 14 )
+
+[node name="Bone5" type="Sprite" parent="OrganInventory"]
+position = Vector2( 391.012, 450.145 )
+rotation = 1.5708
+texture = ExtResource( 14 )
+
+[node name="Bone6" type="Sprite" parent="OrganInventory"]
+position = Vector2( 514.754, 450.145 )
+rotation = 1.5708
+texture = ExtResource( 14 )
+
+[node name="Bone7" type="Sprite" parent="OrganInventory"]
+position = Vector2( 393.173, 589.558 )
+rotation = 1.5708
+texture = ExtResource( 14 )
+
+[node name="Bone8" type="Sprite" parent="OrganInventory"]
+position = Vector2( 513.133, 589.558 )
+rotation = 1.5708
+texture = ExtResource( 14 )
+
+[node name="ToolInventory" type="Node" parent="."]
+
+[node name="Knife" parent="ToolInventory" instance=ExtResource( 4 )]
+position = Vector2( 870.117, 539.773 )
+
+[node name="Bandage" parent="ToolInventory" instance=ExtResource( 4 )]
+position = Vector2( 789.828, 539.262 )
+type = "bandage"
+
+[node name="Axe" parent="ToolInventory" instance=ExtResource( 4 )]
+position = Vector2( 950.817, 539.249 )
+type = "axe"
+
+[node name="Chocolate" parent="ToolInventory" instance=ExtResource( 4 )]
+position = Vector2( 790.166, 459.061 )
+type = "chocolate"
 [connection signal="done" from="Clock" to="." method="_on_Clock_done"]
