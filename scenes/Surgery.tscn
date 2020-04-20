@@ -214,4 +214,8 @@ type = "chocolate"
 [node name="Screwdriver" parent="ToolInventory" instance=ExtResource( 4 )]
 position = Vector2( 870.573, 458.613 )
 type = "screwdriver"
+
+[node name="Defibrillator" parent="ToolInventory" instance=ExtResource( 4 )]
+position = Vector2( 950.676, 457.733 )
+type = "defibrillator"
 [connection signal="done" from="Clock" to="." method="_on_Clock_done"]
