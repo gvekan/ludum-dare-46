@@ -3,7 +3,7 @@
 [ext_resource path="res://scenes/fonts/Early GameBoy.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://scenes/RedButton.tres" type="StyleBox" id=2]
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=1]
 size = 28
 font_data = ExtResource( 1 )
 
@@ -25,7 +25,7 @@ margin_bottom = 520.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Exit"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -39,7 +39,7 @@ margin_bottom = 400.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Restart"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -53,7 +53,7 @@ margin_bottom = 280.0
 custom_styles/hover = ExtResource( 2 )
 custom_styles/pressed = ExtResource( 2 )
 custom_styles/normal = ExtResource( 2 )
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
 text = "Continue"
 __meta__ = {
 "_edit_use_anchors_": false

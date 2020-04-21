@@ -11,6 +11,24 @@ var running = true
 
 var playback_pos = 0.0
 
+const OG_organ_inventory = {
+	"Organ4": "Brain",
+	"Organ5": "Teeth",
+	"Organ6": "Bone2",
+	"Organ7": "Throat",
+	"Organ8": "Bone1",
+	"Organ9": "Bone3",
+	"Organ10": "Lung1",
+	"Organ11": "Heart",
+	"Organ12": "Lung2",
+	"Organ13": "Bone4",
+	"Organ14": "Hand",
+	"Organ15": "Bone5",
+	"Organ16": "Bone6",
+	"Organ17": "Bone7",
+	"Organ18": "Bone8"
+}
+
 var organ_inventory = {
 	"Organ4": "Brain",
 	"Organ5": "Teeth",

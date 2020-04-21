@@ -18,7 +18,7 @@ const broken_bones = {
 var organ_list = ["Organ6", "Organ8", "Organ9", "Organ13","Organ15", 
 	"Organ16", "Organ17", "Organ18"]
 
-var count_broken_bones = 1
+var count_broken_bones = 4
 
 var rng = RandomNumberGenerator.new()
 # Called when the node enters the scene tree for the first time.

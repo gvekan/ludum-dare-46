@@ -27,19 +27,39 @@ var count_treated_corona = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-#	rng.randomize()
-#	infect_organ()
+	organ_inventory["Organ14"] = "Choco"
+	rng.randomize()
+	infect_organ()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
 
-#func infect_organ():
-#	var key = organ_corona.keys()[rng.randi_range(0,organ_corona.size())]
-#	var other = $OrganInventory.get_node(organ_inventory[key])
-#	var corona = $OrganInventory.get_node(organ_corona[key])
-#	organ_corona[key] = 
-#	$OrganInventory.get_node().visible = $OrganInventory/BrokenHeart.visible
-#	$OrganInventory/BrokenHeart.visible = false
+func infect_organ():
+	var organ_name = organ_corona.keys()[rng.randi_range(0,organ_corona.size())]
+	var og = $OrganInventory.get_node(organ_inventory[organ_name])
+	var corona_key = organ_corona[organ_name]
+	var corona = $OrganInventory.get_node(corona_key)
+	organ_inventory[organ_name] = corona_key
+	corona.visible = og.visible
+	corona.visible = false
+	
+func interact_with_organ(organ_object, organ, tool_type, player):
+	if tool_type == Tool.AXE and organ_object in organ_corona.values():
+		var broken = $OrganInventory.get_node(organ_object)
+		var fixed_key = OG_organ_inventory[organ.name]
+		var fixed = $OrganInventory.get_node(fixed_key)
+		organ_inventory[organ.name] = fixed_key
+		fixed.visible = broken.visible
+		broken.visible = false
+		count_treated_corona += 1
+		if count_treated_corona == 4:
+			task_completed = true
+			print("Done")
+		else:
+			print("Infect")
+			infect_organ()
+	else:
+		.interact_with_organ(organ_object, organ, tool_type, player)
 

@@ -1,7 +1,7 @@
 extends Node2D
 
 
-const surgeries = [preload("res://scenes/surgeries/Surgery1.tscn")]
+const surgeries = [preload("res://scenes/surgeries/Surgery1.tscn"),preload("res://scenes/surgeries/Surgery2.tscn"),preload("res://scenes/surgeries/Surgery3.tscn")]
 const START = preload("res://scenes/Start.tscn")
 
 var current_surgery = null
@@ -63,6 +63,7 @@ func _on_Surgery_completed():
 
 
 func _on_Next_pressed():
+	remove_child(current_surgery)
 	$Completed.visible = false
 	current_surgery_level += 1
 	if current_surgery_level > surgeries.size():
