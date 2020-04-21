@@ -27,4 +27,6 @@ func interact_with_organ(organ_object, organ, tool_type, player):
 		$OrganInventory/Heart.visible = $OrganInventory/BrokenHeart.visible
 		$OrganInventory/BrokenHeart.visible = false
 		task_completed = true
+	else:
+		.interact_with_organ(organ_object, organ, tool_type, player)
 		

@@ -1,0 +1,83 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Surgery.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/surgeries/Surgery3.gd" type="Script" id=2]
+[ext_resource path="res://assets/corona.png" type="Texture" id=3]
+
+[node name="Surgery3" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="corona4" type="Sprite" parent="OrganInventory" index="15"]
+position = Vector2( 89.9722, 361.167 )
+scale = Vector2( 0.0727107, 0.0727107 )
+texture = ExtResource( 3 )
+
+[node name="corona5" type="Sprite" parent="OrganInventory" index="16"]
+position = Vector2( 150.206, 363.332 )
+scale = Vector2( 0.0436113, 0.0436113 )
+texture = ExtResource( 3 )
+
+[node name="corona6" type="Sprite" parent="OrganInventory" index="17"]
+position = Vector2( 193.494, 297.281 )
+scale = Vector2( 0.0226216, 0.0226216 )
+texture = ExtResource( 3 )
+
+[node name="corona7" type="Sprite" parent="OrganInventory" index="18"]
+position = Vector2( 201.753, 363.638 )
+scale = Vector2( 0.0226216, 0.0226216 )
+texture = ExtResource( 3 )
+
+[node name="corona8" type="Sprite" parent="OrganInventory" index="19"]
+position = Vector2( 193.376, 428.926 )
+scale = Vector2( 0.0226216, 0.0226216 )
+texture = ExtResource( 3 )
+
+[node name="corona9" type="Sprite" parent="OrganInventory" index="20"]
+position = Vector2( 279.325, 233.343 )
+scale = Vector2( 0.0226216, 0.0226216 )
+texture = ExtResource( 3 )
+
+[node name="corona10" type="Sprite" parent="OrganInventory" index="21"]
+position = Vector2( 258.326, 311.684 )
+scale = Vector2( 0.0618857, 0.0618858 )
+texture = ExtResource( 3 )
+
+[node name="corona11" type="Sprite" parent="OrganInventory" index="22"]
+position = Vector2( 267.238, 358.956 )
+scale = Vector2( 0.0369367, 0.0369367 )
+texture = ExtResource( 3 )
+
+[node name="corona12" type="Sprite" parent="OrganInventory" index="23"]
+position = Vector2( 258.204, 415.89 )
+scale = Vector2( 0.0778368, 0.0778369 )
+texture = ExtResource( 3 )
+
+[node name="corona13" type="Sprite" parent="OrganInventory" index="24"]
+position = Vector2( 277.372, 492.978 )
+scale = Vector2( 0.0258937, 0.0258937 )
+texture = ExtResource( 3 )
+
+[node name="corona14" type="Sprite" parent="OrganInventory" index="25"]
+position = Vector2( 357.827, 363.632 )
+scale = Vector2( 0.131825, 0.131825 )
+texture = ExtResource( 3 )
+
+[node name="corona15" type="Sprite" parent="OrganInventory" index="26"]
+position = Vector2( 461.349, 293.252 )
+scale = Vector2( 0.0263995, 0.0263995 )
+texture = ExtResource( 3 )
+
+[node name="corona16" type="Sprite" parent="OrganInventory" index="27"]
+position = Vector2( 585.518, 293.252 )
+scale = Vector2( 0.0263995, 0.0263995 )
+texture = ExtResource( 3 )
+
+[node name="corona17" type="Sprite" parent="OrganInventory" index="28"]
+position = Vector2( 466.475, 433.085 )
+scale = Vector2( 0.0263995, 0.0263995 )
+texture = ExtResource( 3 )
+
+[node name="corona18" type="Sprite" parent="OrganInventory" index="29"]
+position = Vector2( 583.24, 432.801 )
+scale = Vector2( 0.0254452, 0.0254452 )
+texture = ExtResource( 3 )
