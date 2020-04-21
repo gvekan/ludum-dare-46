@@ -91,18 +91,18 @@ func organ_clicked(organ, player):
 			change_panic_clock()
 		else:
 			$Clock.set_wait_time(1)
-	else:
+	elif organ.is_open():
 		interact_with_organ(organ_inventory[organ.name], organ, player.current_tool, player)
 	
 func interact_with_organ(organ_object, organ, tool_type, player):
 	if death_by_sharp_tool(organ_object, organ, tool_type):
 		$Clock.game_over()
-	elif organ.is_open() and tool_type in Tool.sharp_tools:
+	elif tool_type in Tool.sharp_tools:
 		$Clock.set_time_and_test_game_over($Clock.get_time() - 5)
 	
 
 func death_by_sharp_tool(organ_object, organ, tool_type):
-	return organ.is_open() and tool_type in Tool.sharp_tools and organ_object in sharp_sensitive_organs
+	return tool_type in Tool.sharp_tools and organ_object in sharp_sensitive_organs
 
 	
 
