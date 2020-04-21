@@ -11,7 +11,7 @@ script = ExtResource( 2 )
 text = "Poor guy fell down the stairs. Fix his broken bones so he doeasn't die."
 
 [node name="Clock" parent="." index="2"]
-start_time = 500
+start_time = 300
 
 [node name="Bone80" type="Sprite" parent="OrganInventory" index="15"]
 position = Vector2( 513.133, 589.558 )

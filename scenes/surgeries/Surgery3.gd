@@ -37,13 +37,13 @@ func _ready():
 #	pass
 
 func infect_organ():
-	var organ_name = organ_corona.keys()[rng.randi_range(0,organ_corona.size())]
+	var organ_name = organ_corona.keys()[rng.randi_range(0,organ_corona.size()-1)]
 	var og = $OrganInventory.get_node(organ_inventory[organ_name])
 	var corona_key = organ_corona[organ_name]
 	var corona = $OrganInventory.get_node(corona_key)
 	organ_inventory[organ_name] = corona_key
 	corona.visible = og.visible
-	corona.visible = false
+	og.visible = false
 	
 func interact_with_organ(organ_object, organ, tool_type, player):
 	if tool_type == Tool.AXE and organ_object in organ_corona.values():

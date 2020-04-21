@@ -25,7 +25,8 @@ var rng = RandomNumberGenerator.new()
 func _ready():
 	rng.randomize()
 	for i in range(count_broken_bones):
-		var pos = rng.randi_range(0, organ_list.size())
+		
+		var pos = rng.randi_range(0, organ_list.size()-1)
 		var rand_key = organ_list[pos]
 		organ_list.remove(pos)
 		organ_inventory[rand_key] = broken_bones[rand_key]

@@ -18,7 +18,7 @@ custom_fonts/normal_font = SubResource( 1 )
 text = "Patient is infected by corona. Try to kill it while it spreads."
 
 [node name="Clock" parent="." index="2"]
-start_time = 999
+start_time = 700
 
 [node name="corona4" type="Sprite" parent="OrganInventory" index="15"]
 position = Vector2( 89.9722, 361.167 )
