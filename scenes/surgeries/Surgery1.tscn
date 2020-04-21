@@ -18,9 +18,6 @@ text = "Hello Heart!
 Try to fix a broken heart on your first surgery <
 "
 
-[node name="Clock" parent="." index="2"]
-start_time = 1
-
 [node name="BrokenHeart" type="Sprite" parent="OrganInventory" index="15"]
 position = Vector2( 351.001, 369.207 )
 texture = ExtResource( 3 )
