@@ -48,7 +48,7 @@ func interact_with_organ(organ_object, organ, tool_type, player):
 		var fixed = $OrganInventory.get_node(organ_object)
 		var broken_key = organ_object + "0"
 		var broken = $OrganInventory.get_node(broken_key)
-		organ_inventory[organ.name] = fixed
+		organ_inventory[organ.name] = broken_key
 		broken.visible = fixed.visible
 		fixed.visible = false
 		task_completed = false
