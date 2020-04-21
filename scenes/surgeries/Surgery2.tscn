@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/Surgery.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/surgeries/Surgery2.gd" type="Script" id=2]
+[ext_resource path="res://assets/broken-bone.png" type="Texture" id=3]
+
+[node name="Surgery2" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="Clock" parent="." index="2"]
+start_time = 300
+
+[node name="Bone80" type="Sprite" parent="OrganInventory" index="15"]
+position = Vector2( 513.133, 589.558 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+
+[node name="Bone10" type="Sprite" parent="OrganInventory" index="16"]
+position = Vector2( 350.358, 500.024 )
+texture = ExtResource( 3 )
+
+[node name="Bone20" type="Sprite" parent="OrganInventory" index="17"]
+position = Vector2( 350.358, 368.924 )
+texture = ExtResource( 3 )
+
+[node name="Bone30" type="Sprite" parent="OrganInventory" index="18"]
+position = Vector2( 136.093, 389.798 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+texture = ExtResource( 3 )
+
+[node name="Bone40" type="Sprite" parent="OrganInventory" index="19"]
+position = Vector2( 136.093, 650.186 )
+rotation = 1.5708
+scale = Vector2( 1, 2 )
+texture = ExtResource( 3 )
+
+[node name="Bone50" type="Sprite" parent="OrganInventory" index="20"]
+position = Vector2( 391.012, 450.145 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+
+[node name="Bone60" type="Sprite" parent="OrganInventory" index="21"]
+position = Vector2( 514.754, 450.145 )
+rotation = 1.5708
+texture = ExtResource( 3 )
+
+[node name="Bone70" type="Sprite" parent="OrganInventory" index="22"]
+position = Vector2( 393.173, 589.558 )
+rotation = 1.5708
+texture = ExtResource( 3 )

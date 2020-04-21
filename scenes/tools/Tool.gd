@@ -8,7 +8,7 @@ const CHOCOLATE = "chocolate"
 const SCREWDRIVER = "screwdriver"
 const DEFIBRILLATOR = "defibrillator"
 
-const sharp_tools = [KNIFE, AXE]
+const sharp_tools = [KNIFE, AXE, SCREWDRIVER]
 
 var type_assets = {
 	KNIFE: preload("res://assets/scalpel.png"),
